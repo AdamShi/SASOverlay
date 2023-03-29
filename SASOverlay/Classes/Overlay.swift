@@ -9,17 +9,18 @@
 import Foundation
 import SwiftEntryKit;
 
-class Overlay : NSObject {
+public class Overlay : NSObject {
 //    @objc var name = "abc"
 //    @objc static func action() -> Int {
 //        return 101
 //    }
-    
+
+//    public typealias DismissCompletionHandler = () -> Void
    
     // MARK: Entry
     // 显示在屏幕中间, 点周围无效果 且 视图不消失, 选择后手动消失
     // 后来的会隐藏前面的
-    @objc static func entryAlert(_ view: UIView)
+    @objc public static func entryAlert(_ view: UIView)
     {
         var attributes = EKAttributes()
         //attributes.windowLevel = .statusBar
@@ -53,7 +54,7 @@ class Overlay : NSObject {
     }
     // 显示在屏幕下边, 点周围无效果 可以 视图不动/消失, 选择后手动消失
     // 后来的会隐藏前面的
-    @objc static func entrySheet(_ view: UIView,
+    @objc public static func entrySheet(_ view: UIView,
                                  top: Bool = true,
                                  offset: CGFloat = 0.0,
                                  round: CGFloat = 0.0,
@@ -119,7 +120,7 @@ class Overlay : NSObject {
     }
     
     //显示几秒后消失，周围可以点击
-    @objc static func entrySheetHide(_ view: UIView,
+    @objc public static func entrySheetHide(_ view: UIView,
                                  top: Bool = true,
                                  offset: CGFloat = 0.0,
                                  round: CGFloat = 0.0,
@@ -170,7 +171,7 @@ class Overlay : NSObject {
     }
     
     
-    @objc static func entryAlert(_ view: UIView, dismiss: Bool = true)
+    @objc public static func entryAlert(_ view: UIView, dismiss: Bool = true)
     {
         for window in UIApplication.shared.windows {
             window.endEditing(true)
@@ -200,7 +201,7 @@ class Overlay : NSObject {
         SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: false, rollbackWindow: .main)
     }
     
-    @objc static func entryHide(_ completion: SwiftEntryKit.DismissCompletionHandler? = nil) {
+    @objc public static func entryHide(_ completion: SwiftEntryKit.DismissCompletionHandler? = nil) {
         SwiftEntryKit.dismiss(.all, with: completion)
     }
     
