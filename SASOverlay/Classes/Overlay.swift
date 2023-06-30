@@ -101,7 +101,7 @@ public class Overlay : NSObject {
         //attributes.statusBar = .inferred
         //attributes.popBehavior = .overridden
         attributes.screenBackground = .color(color: EKColor(red: 0, green: 0, blue: 0).with(alpha: 0.5))
-        attributes.entryBackground = .color(color: EKColor(red: bgcolor>>16 & 0xff, green: bgcolor>>8 & 0xff, blue: bgcolor & 0xff))
+//        attributes.entryBackground = .color(color: EKColor(red: bgcolor>>16 & 0xff, green: bgcolor>>8 & 0xff, blue: bgcolor & 0xff))
         if round > 0 {
             if top {
                 attributes.roundCorners = .bottom(radius: round)
